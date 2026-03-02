@@ -11,6 +11,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+    <!-- Icon -->
+    <script src="https://kit.fontawesome.com/693c4b0aac.js" crossorigin="anonymous"></script>
     <!-- DaisyUi -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <!-- Tailwind -->
@@ -20,13 +22,42 @@
             --font-Hind: "Hind Siliguri", sans-serif;
             --font-Poppins: "Poppins", sans-serif;
             --color-btnBg: #422AD5;
+            --color-textNBg: #422AD5;
             --color-textBg: #00BCFF;
+            --color-navBgBorder: #C6BDBD;
+            --color-navBgF: #00000025;
+            --color-navBgT: #00000020;
         }
     </style>
 </head>
 
 <body>
+    <header class="">
+        <!-- NavBar -->
+        <nav class="py-6 bg-linear-to-r from-navBgF to-navBgT border-2 border-navBgBorder">
+            <ul class="flex items-center justify-between w-11/12 mx-auto">
+                <div class="flex items-center gap-2">
+                    <h1 class="font-Poppins font-semibold text-lg">English</h1>
+                    <img src="assets/logo.png" alt="">
+                    <h1 class="font-Poppins font-semibold text-lg">Window</h1>
+                </div>
+                <div class="flex items-center gap-4">
+                    <li class="font-Poppins font-semibold text-xs text-textNBg py-2.5 px-3.5 border-2 rounded-md hidden md:block"><i class="fa-solid fa-circle-question"></i> FAQ
+                    </li>
+                    <li class="font-Poppins font-semibold text-xs text-textNBg py-2.5 px-3.5 border-2 rounded-md hidden md:block"><i class="fa-brands fa-leanpub"></i> Learn
+                    </li>
+                    <li class="font-Poppins font-semibold text-xs text-textNBg py-2.5 px-3.5 border-2 rounded-md"><i class="fa-solid fa-arrow-right-from-bracket"></i> LogOut
+                    </li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <main>
 
+    </main>
+    <footer>
+
+    </footer>
 </body>
 
 </html>
