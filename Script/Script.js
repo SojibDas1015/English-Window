@@ -78,7 +78,7 @@ const displayModal = (data) => {
     })
 
 
-    
+
 
 }
 const displaylearBtn = (displayBtn) => {
@@ -127,4 +127,28 @@ const displayLesson = (lessons) => {
     }
 
 }
+
+const displayShow = () => {
+    const navbar = getId('navbar');
+    const header = getId('heading');
+    const main = getId('main');
+    const logOut = getId('logOut');
+    // navbar.classList.remove('hidden')
+    document.getElementById('loginBtn').addEventListener('click', (e) => {
+        const passwordField = getId('passwordField');
+        const convertValue = parseInt(passwordField.value);
+        if (convertValue === 123456) {
+            navbar.style.display = 'block';
+            main.style.display = 'block';
+            header.style.display = 'none';
+            
+        }
+    })
+    document.getElementById('logOut').addEventListener('click', () => {
+        navbar.style.display = 'none';
+        main.style.display = 'none';
+        header.style.display = 'flex';
+    })
+}
+displayShow()
 learBtnLoad()
