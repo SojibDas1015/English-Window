@@ -28,6 +28,7 @@
             --color-navBgF: #00000015;
             --color-navBgT: #00000010;
             --color-learCon: #F8F8F8;
+            --color-learIcon: #1A91FF10;
         }
     </style>
 </head>
@@ -88,9 +89,9 @@
             <div id="learnBtnContainer" class="flex gap-3 justify-center flex-wrap">
 
             </div>
-            <div id="lesson-Details" class="bg-learCon py-15">
-                <div class="p-2">
-                    <p class="font-Hind font-normal text-xs text-center">আপনি এখনো কোন Lesson Select করেন ন</p>
+            <div id="lessonContainer" class="bg-learCon p-7 rounded-md grid grid-cols-1 md:grid-cols-3 gap-7">
+                <div id="lessonSelect" class="col-span-full space-y-3">
+                    <p class="font-Hind font-normal text-xs text-center">আপনি এখনো কোন Lesson Select করেন নি</p>
                     <h3 class="font-Hind font-medium text-3xl text-center">একটি Lesson Select করুন।</h3>
                 </div>
             </div>
