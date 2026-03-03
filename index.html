@@ -43,18 +43,18 @@
                     <h1 class="font-Poppins font-semibold text-lg">Window</h1>
                 </div>
                 <div class="flex items-center gap-4">
-                    <li
-                        class="font-Poppins font-semibold text-xs text-textNBg py-2.5 px-3.5 border-2 rounded-md hidden md:block hover:bg-btnBg hover:text-white">
+                    <button id="faqBtn"
+                        class="font-Poppins font-semibold text-xs text-textNBg py-2.5 px-3.5 border-2 rounded-md hidden md:block hover:bg-btnBg hover:text-white cursor-pointer">
                         <i class="fa-solid fa-circle-question"></i> FAQ
-                    </li>
-                    <li
-                        class="font-Poppins font-semibold text-xs text-textNBg py-2.5 px-3.5 border-2 rounded-md hidden md:block hover:bg-btnBg hover:text-white">
+                    </button>
+                    <button id="learnBtn"
+                        class="font-Poppins font-semibold text-xs text-textNBg py-2.5 px-3.5 border-2 rounded-md hidden md:block hover:bg-btnBg hover:text-white cursor-pointer">
                         <i class="fa-brands fa-leanpub"></i> Learn
-                    </li>
-                    <li
-                        class="font-Poppins font-semibold text-xs text-textNBg py-2.5 px-3.5 border-2 rounded-md hover:bg-btnBg hover:text-white">
+                    </button>
+                    <button
+                        class="font-Poppins font-semibold text-xs text-textNBg py-2.5 px-3.5 border-2 rounded-md hover:bg-btnBg hover:text-white cursor-pointer">
                         <i class="fa-solid fa-arrow-right-from-bracket"></i> LogOut
-                    </li>
+                    </button>
                 </div>
             </ul>
         </nav>
@@ -81,16 +81,12 @@
     </header>
     <main class="w-11/12 mx-auto">
         <!-- Let's Learn Vocabularies -->
-        <section class="my-20 space-y-8">
+        <section id="learnSection" class="my-20 space-y-8">
             <h1 class="font-Poppins font-bold text-4xl text-center"><span class="text-textBg">Let's</span> Learn
                 Vocabularies</h1>
-            <div id="learn-btn" class="flex gap-3 justify-center">
-                <button
-                    class="font-Poppins font-semibold text-xs text-textNBg py-2.5 px-3.5 border-2 rounded-md hover:bg-btnBg hover:text-white">Lesson-1</button>
-                <button
-                    class="font-Poppins font-semibold text-xs text-textNBg py-2.5 px-3.5 border-2 rounded-md hover:bg-btnBg hover:text-white">Lesson-1</button>
-                <button
-                    class="font-Poppins font-semibold text-xs text-textNBg py-2.5 px-3.5 border-2 rounded-md hover:bg-btnBg hover:text-white">Lesson-1</button>
+            <!-- Learn Button Container -->
+            <div id="learnBtnContainer" class="flex gap-3 justify-center">
+
             </div>
             <div id="lesson-Details" class="bg-learCon py-15">
                 <div class="p-2">
@@ -100,7 +96,7 @@
             </div>
         </section>
         <!-- Frequently Asked Questions -->
-        <section class="mb-20 space-y-8">
+        <section id="faqSection" class="mb-20 space-y-8">
             <h1 class="font-Poppins font-bold text-4xl text-center"><span class="text-textBg">Frequently</span> Asked
                 Questions</h1>
             <!-- Accordion -->
@@ -168,6 +164,8 @@
             </div>
         </section>
     </footer>
+    <script src="Script/Utility.js"></script>
+    <script src="Script/Script.js"></script>
 </body>
 
 </html>
