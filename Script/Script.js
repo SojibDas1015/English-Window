@@ -30,6 +30,8 @@ const disable = () => {
 const enable = (active) => {
     active.classList.add('bg-btnBgLearn')
     active.classList.add('text-white')
+    const lessonContainer = getId('lessonContainer');
+    lessonContainer.innerHTML = '';
 }
 const learBtnLoad = () => {
     const learnBtnContainer = getId('learnBtnContainer');
