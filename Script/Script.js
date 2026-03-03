@@ -12,6 +12,14 @@ learnBtn.addEventListener('click', () => {
         behavior: 'smooth'
     })
 })
+const loadingEnable = () => {
+    const spinner = getId('spinner');
+    spinner.style.display = 'flex'
+}
+const loadingDisable = () => {
+    const spinner = getId('spinner');
+    spinner.style.display = 'none'
+}
 const disable = () => {
     const btnDisable = document.getElementsByClassName('bg-btnBgLearn');
     for (const btn of btnDisable) {
@@ -30,6 +38,7 @@ const learBtnLoad = () => {
         .then(data => displaylearBtn(data.data))
 }
 const loadLesson = (id, btnid) => {
+    loadingEnable()
     disable()
     const selectBtn = getId(btnid)
     enable(selectBtn);
@@ -51,11 +60,11 @@ const displayModal = (data) => {
     div.innerHTML = `
     <div class="card bg-base-100 shadow-sm px-0 min-h-75">
                     <div class="card-body space-y-2">
-                        <h2 class="card-title justify-left text-3xl font-bold">${data.word} (<i class="fa-solid fa-microphone-lines"></i> : ${data.pronunciation})</h2>
+                        <h2 class="card-title justify-left text-xl md:text-2xl font-bold">${data.word} (<i class="fa-solid fa-microphone-lines"></i> : ${data.pronunciation})</h2>
                         <p class="text-xl font-semibold font-Hind"><span class="font-Poppins">Meaning</span><br> ${data.meaning}</p>
                         <p class="text-xl font-semibold font-Hind"><span class="font-Poppins">Example</span><br> ${data.sentence}</p>
                         <p class="text-xl font-semibold font-Hind">সমার্থক শব্দ গুলো</p>
-                        <div id="mainContent" class="flex gap-2">
+                        <div id="mainContent" class="flex flex-wrap gap-2">
                         </div>
                     </div>
                 </div>
@@ -92,6 +101,7 @@ const displaylearBtn = (displayBtn) => {
     }
 }
 const displayLesson = (lessons) => {
+    loadingDisable()
     const lessonContainer = getId('lessonContainer');
     lessonContainer.innerHTML = '';
     if (lessons.length == 0) {
@@ -141,7 +151,7 @@ const displayShow = () => {
             navbar.style.display = 'block';
             main.style.display = 'block';
             header.style.display = 'none';
-            
+
         }
     })
     document.getElementById('logOut').addEventListener('click', () => {

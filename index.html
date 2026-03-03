@@ -37,7 +37,8 @@
 <body>
     <header class="">
         <!-- NavBar -->
-        <nav id="navbar" class="fixed top-0 w-full backdrop-blur-md z-50 py-3 bg-linear-to-r from-navBgF to-navBgT border-2 border-navBgBorder hidden">
+        <nav id="navbar"
+            class="fixed top-0 w-full backdrop-blur-md z-50 py-3 bg-linear-to-r from-navBgF to-navBgT border-2 border-navBgBorder hidden">
             <ul class="flex items-center justify-between w-11/12 mx-auto">
                 <div class="flex items-center gap-2">
                     <h1 class="font-Poppins font-semibold text-lg">English</h1>
@@ -68,11 +69,13 @@
                     যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের
                     Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</h3>
                 <div class="space-y-4.5">
-                    <input class="py-2 px-3" type="text" name="" id="" placeholder="Enter Your Name">
+                    <input class="py-2 px-3" type="text" name="" id="" placeholder="Enter Your Name" required>
                     <br>
-                    <input  class="py-2 px-3" type="password" name="" id="passwordField" placeholder="Enter Login Code 123456">
+                    <input class="py-2 px-3" type="password" name="" id="passwordField"
+                        placeholder="Enter Login Code 123456">
                     <br>
-                    <button id="loginBtn" class="font-Poppins font-semibold text-xs py-2 px-4 bg-btnBg text-white rounded cursor-pointer">Get
+                    <button id="loginBtn"
+                        class="font-Poppins font-semibold text-xs py-2 px-4 bg-btnBg text-white rounded cursor-pointer">Get
                         Started</button>
                 </div>
             </div>
@@ -90,8 +93,13 @@
             <div id="learnBtnContainer" class="flex gap-3 justify-center flex-wrap">
 
             </div>
+            <div id="spinner" class="flex justify-center col-span-full hidden">
+                <span class="loading loading-dots loading-xl"></span>
+            </div>
             <!-- Lesson Container -->
             <div id="lessonContainer" class="bg-learCon p-7 rounded-md grid grid-cols-1 md:grid-cols-3 gap-7">
+
+
                 <div id="lessonSelect" class="col-span-full space-y-3">
                     <p class="font-Hind font-normal text-xs text-center">আপনি এখনো কোন Lesson Select করেন নি</p>
                     <h3 class="font-Hind font-medium text-3xl text-center">একটি Lesson Select করুন।</h3>
@@ -148,8 +156,8 @@
         <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
         <dialog id="learnModal" class="modal">
             <div id="modalBoxContainer" class="modal-box">
-                
-                
+
+
             </div>
         </dialog>
     </main>
