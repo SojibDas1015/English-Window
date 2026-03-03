@@ -12,13 +12,27 @@ learnBtn.addEventListener('click', () => {
         behavior: 'smooth'
     })
 })
+const disable = () => {
+    const btnDisable = document.getElementsByClassName('bg-btnBgLearn');
+    for(const btn of btnDisable){
+        btn.classList.remove('bg-btnBgLearn')
+        btn.classList.remove('text-white')
+    }
+}
+const enable = (active) => {
+    active.classList.add('bg-btnBgLearn')
+    active.classList.add('text-white')
+}
 const learBtnLoad = () => {
     const learnBtnContainer = getId('learnBtnContainer');
     fetch('https://openapi.programming-hero.com/api/levels/all')
         .then(res => res.json())
         .then(data => displaylearBtn(data.data))
 }
-const loadLesson = (id) => {
+const loadLesson = (id, btnid) => {
+    disable()
+    const selectBtn = getId(btnid)
+    enable(selectBtn);    
     const url = `https://openapi.programming-hero.com/api/level/${id}`;
     fetch(url).then(res => res.json()).then(data => {
         displayLesson(data.data.slice(0, 9))
@@ -29,7 +43,7 @@ const displaylearBtn = (displayBtn) => {
     for (const btn of displayBtn) {
         const div = document.createElement('div');
         div.innerHTML = `
-        <button onclick="loadLesson(${btn.level_no})" class="font-Poppins font-semibold text-xs text-textNBg py-2.5 px-3.5 border-2 rounded-md hover:bg-btnBg hover:text-white cursor-pointer">Lesson-${btn.level_no}</button>
+        <button id="${btn.id}" onclick="loadLesson(${btn.level_no}, ${btn.id})" class="font-Poppins font-semibold text-xs text-btnBgLearn py-2.5 px-3.5 border-2 rounded-md hover:bg-btnBgLearn hover:text-white cursor-pointer">Lesson-${btn.level_no}</button>
         `
         learnBtnContainer.append(div);
     }
