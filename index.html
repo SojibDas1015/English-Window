@@ -93,19 +93,59 @@
                     class="font-Poppins font-semibold text-xs text-textNBg py-2.5 px-3.5 border-2 rounded-md hover:bg-btnBg hover:text-white">Lesson-1</button>
             </div>
             <div id="lesson-Details" class="bg-learCon py-15">
-                <div>
+                <div class="p-2">
                     <p class="font-Hind font-normal text-xs text-center">আপনি এখনো কোন Lesson Select করেন ন</p>
                     <h3 class="font-Hind font-medium text-3xl text-center">একটি Lesson Select করুন।</h3>
                 </div>
             </div>
         </section>
         <!-- Frequently Asked Questions -->
-        <section class="mb-20">
-            <h1 class="font-Poppins font-bold text-4xl text-center"><span class="text-textBg">Frequently</span> Asked Questions</h1>
+        <section class="mb-20 space-y-8">
+            <h1 class="font-Poppins font-bold text-4xl text-center"><span class="text-textBg">Frequently</span> Asked
+                Questions</h1>
+            <!-- Accordion -->
+            <div class="collapse collapse-plus bg-learCon border border-base-300">
+                <input type="radio" name="my-accordion-3" checked="checked" />
+                <div class="collapse-title font-semibold">What is the difference between var, let, and const</div>
+                <div class="collapse-content text-sm">var, which is a global variable that holds the declared variable
+                    at the head, which is called hoisting</div>
+            </div>
+            <div class="collapse collapse-plus bg-learCon border border-base-300">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title font-semibold">What is the difference between map(), forEach(), and filter()
+                </div>
+                <div class="collapse-content text-sm">map() which loops over an array returns an array. forEach() which
+                    loops over an array returns nothing. filter() which loops over an array returns all values ​​in the
+                    array if the condition is true.</div>
+            </div>
+            <div class="collapse collapse-plus bg-learCon border border-base-300">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title font-semibold">What are arrow functions and how they are different from
+                    regular functions</div>
+                <div class="collapse-content text-sm">In JavaScript (ES6), an arrow function can automatically return a
+                    value if you do not use curly braces {}.But a normal function does not automatically return a value
+                    — you must explicitly use the return keyword</div>
+            </div>
+            <div class="collapse collapse-plus bg-learCon border border-base-300">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title font-semibold">How do JavaScript Promises work</div>
+                <div class="collapse-content text-sm">When an API call is made, the server first sends a response. If
+                    the request is successful (resolved), it eturns the data in packets. Then we use .then() to handle
+                    the response and convert it into JSON using response.json(). After the JSON onversion is resolved,
+                    we get the actual usable data. If something goes wrong (rejected), the error is caught in the
+                    .catch() block.</div>
+            </div>
+            <div class="collapse collapse-plus bg-learCon border border-base-300">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title font-semibold">How does closures work in JavaScript</div>
+                <div class="collapse-content text-sm">A closure is a feature in JavaScript where an inner function can
+                    remember and access the variables of its outer function, even after the outer function has finished
+                    executing.</div>
+            </div>
         </section>
     </main>
     <footer>
-
+        
     </footer>
 </body>
 
