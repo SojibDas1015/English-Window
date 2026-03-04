@@ -53,6 +53,11 @@ const loadModal = (id) => {
     const url = `https://openapi.programming-hero.com/api/word/${id}`
     fetch(url).then(res => res.json()).then(data => displayModal(data.data))
 }
+const speakText = (word) => {
+    const utterance = new SpeechSynthesisUtterance(word);
+    utterance.lang = 'en-EN'; // English
+    window.speechSynthesis.speak(utterance);
+}
 const displayModal = (data) => {
     const learnModal = getId('learnModal')
     learnModal.showModal();
@@ -63,7 +68,7 @@ const displayModal = (data) => {
     <div class="card bg-base-100 shadow-sm px-0 min-h-75">
                     <div class="card-body space-y-2">
                         <h2 class="card-title justify-left text-xl md:text-2xl font-bold">${data.word} (<i class="fa-solid fa-microphone-lines"></i> : ${data.pronunciation})</h2>
-                        <p class="text-xl font-semibold font-Hind"><span class="font-Poppins">Meaning</span><br> ${data.meaning === null? "অর্থ পাওয়া যায় নি" : data.meaning}</p>
+                        <p class="text-xl font-semibold font-Hind"><span class="font-Poppins">Meaning</span><br> ${data.meaning === null ? "অর্থ পাওয়া যায় নি" : data.meaning}</p>
                         <p class="text-xl font-semibold font-Hind"><span class="font-Poppins">Example</span><br> ${data.sentence}</p>
                         <p class="text-xl font-semibold font-Hind">সমার্থক শব্দ গুলো</p>
                         <div id="mainContent" class="flex flex-wrap gap-2">
@@ -124,10 +129,10 @@ const displayLesson = (lessons) => {
                     <div class="card-body space-y-2">
                         <h2 class="card-title justify-center text-3xl font-bold">${lesson.word}</h2>
                         <p class="text-center">Meaning / Pronounciation</p>
-                        <h2 class="card-title justify-center font-Hind font-semibold text-xl text-center">"${lesson.meaning === null? "অর্থ পাওয়া যায় নি" : lesson.meaning} / ${lesson.pronunciation}"</h2>
+                        <h2 class="card-title justify-center font-Hind font-semibold text-xl text-center">"${lesson.meaning === null ? "অর্থ পাওয়া যায় নি" : lesson.meaning} / ${lesson.pronunciation}"</h2>
                         <div class="card-actions justify-between pt-12">
                             <button onclick="loadModal(${lesson.id})" class="btn bg-learIcon"><i class="fa-solid fa-circle-info"></i></button>
-                            <button class="btn bg-learIcon"><i class="fa-solid fa-volume"></i></button>
+                            <button onclick="speakText('${lesson.word}')" class="btn bg-learIcon"><i class="fa-solid fa-volume"></i></button>
                         </div>
                     </div>
                 </div>
@@ -136,27 +141,37 @@ const displayLesson = (lessons) => {
     }
 
 }
-
 const displayShow = () => {
     const navbar = getId('navbar');
     const header = getId('heading');
     const main = getId('main');
     const logOut = getId('logOut');
+    const userName = getId('userName');
     // navbar.classList.remove('hidden')
     document.getElementById('loginBtn').addEventListener('click', (e) => {
         const passwordField = getId('passwordField');
         const convertValue = parseInt(passwordField.value);
-        if (convertValue === 123456) {
-            navbar.style.display = 'block';
-            main.style.display = 'block';
-            header.style.display = 'none';
-            Swal.fire({
-                title: "Drag me!",
-                icon: "success",
-                draggable: true
-            });
+        if (userName.value.length > 3) {
+            if (convertValue === 123456) {
+                navbar.style.display = 'block';
+                main.style.display = 'block';
+                header.style.display = 'none';
+                Swal.fire({
+                    title: `অভিনন্দন`,
+                    text: `চলুন আজ নতুন কিছু শিখা যাক`,
+                    icon: "success",
+                    draggable: true
+                });
 
+            }
+            else {
+                alert('Wrong Password. Contact Admin to Get Your Login Code')
+            }
         }
+        else {
+            alert('Please Tell Your First Name')
+        }
+
     })
     document.getElementById('logOut').addEventListener('click', () => {
         navbar.style.display = 'none';
