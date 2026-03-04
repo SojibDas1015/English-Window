@@ -63,7 +63,7 @@ const displayModal = (data) => {
     <div class="card bg-base-100 shadow-sm px-0 min-h-75">
                     <div class="card-body space-y-2">
                         <h2 class="card-title justify-left text-xl md:text-2xl font-bold">${data.word} (<i class="fa-solid fa-microphone-lines"></i> : ${data.pronunciation})</h2>
-                        <p class="text-xl font-semibold font-Hind"><span class="font-Poppins">Meaning</span><br> ${data.meaning}</p>
+                        <p class="text-xl font-semibold font-Hind"><span class="font-Poppins">Meaning</span><br> ${data.meaning === null? "অর্থ পাওয়া যায় নি" : data.meaning}</p>
                         <p class="text-xl font-semibold font-Hind"><span class="font-Poppins">Example</span><br> ${data.sentence}</p>
                         <p class="text-xl font-semibold font-Hind">সমার্থক শব্দ গুলো</p>
                         <div id="mainContent" class="flex flex-wrap gap-2">
@@ -87,9 +87,6 @@ const displayModal = (data) => {
         `
         mainContent.appendChild(divBtn)
     })
-
-
-
 
 }
 const displaylearBtn = (displayBtn) => {
@@ -127,7 +124,7 @@ const displayLesson = (lessons) => {
                     <div class="card-body space-y-2">
                         <h2 class="card-title justify-center text-3xl font-bold">${lesson.word}</h2>
                         <p class="text-center">Meaning / Pronounciation</p>
-                        <h2 class="card-title justify-center font-Hind font-semibold text-xl text-center">"${lesson.meaning} / ${lesson.pronunciation}"</h2>
+                        <h2 class="card-title justify-center font-Hind font-semibold text-xl text-center">"${lesson.meaning === null? "অর্থ পাওয়া যায় নি" : lesson.meaning} / ${lesson.pronunciation}"</h2>
                         <div class="card-actions justify-between pt-12">
                             <button onclick="loadModal(${lesson.id})" class="btn bg-learIcon"><i class="fa-solid fa-circle-info"></i></button>
                             <button class="btn bg-learIcon"><i class="fa-solid fa-volume"></i></button>
