@@ -153,6 +153,11 @@ const displayShow = () => {
             navbar.style.display = 'block';
             main.style.display = 'block';
             header.style.display = 'none';
+            Swal.fire({
+                title: "Drag me!",
+                icon: "success",
+                draggable: true
+            });
 
         }
     })
