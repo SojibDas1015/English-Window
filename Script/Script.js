@@ -176,7 +176,7 @@ const displayShow = () => {
     document.getElementById('logOut').addEventListener('click', () => {
         navbar.style.display = 'none';
         main.style.display = 'none';
-        header.style.display = 'flex';
+        header.style.display = 'block';
     })
 }
 displayShow()
